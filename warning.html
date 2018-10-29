@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WARNING</title>
+    <link rel="icon" href="gifs/warning.gif" type="image/gif" >
+    
+    
+    <!-- CSS -->
+    
+    <style>
+        
+        /*Creamos como boton el propio fondo, que será el gif "warning.gif"*/
+          
+        /*CSS Boton*/ 
+       
+        #boton {
+        background-image: url(gifs/warning.gif);
+        background-size: 2000px 1500px;
+        background-repeat: no-repeat;
+        width: 2000px;
+        height: 1500px;
+        
+            
+        }
+        
+        /*Fin CSS Boton*/
+        
+        
+        
+        
+    </style>
+    
+    <!-- FIN CSS -->
+    
+    <!-- JavaScript-->
+    
+    <script>
+          
+    // Creamos la función reset que llama de nuevo a la página index.html para volver a recargar el juego desde el principio    
+        
+    
+    function reset(){
+        
+        window.open("index.html","_self");
+        
+    }
+    
+    </script>
+    
+    <!-- FIN JavaScript-->
+    
+    
+</head>
+<body>
+  
+  <!-- Definimos un sonido de fondo para esta página y creamos el botón que será el gif por completo -->
+  <embed src="sonidos/tvstatic.mp3" autostart="true" loop="true" volume="0.00001" width="0" height="0"/>
+   <button id="boton" onclick="reset()"></button>
+   
+    
+</body>
+</html>

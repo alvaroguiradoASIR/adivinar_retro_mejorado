@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAME OVER</title>
+    <link rel="icon" href="gifs/gameover.gif" type="image/gif" >
+    
+    <!-- CSS -->
+    
+    <style>
+        
+        /*Creamos como boton el propio fondo, que será el gif "warning.gif"*/
+         
+        body {
+            
+        background-image: url(gifs/gameover.gif);    
+        background-size: 2000px 1500px;
+        background-repeat: no-repeat;
+        width: 2000px;
+        height: 1500px;
+        animation: animate 0.3s linear infinite;
+        }    
+        
+        /*CSS Boton*/ 
+        
+        #boton {
+        background-image: url(gifs/insertcoin.gif);
+        background-color: black;
+        background-size: 500px 300px;   
+        width: 500px;
+        height: 300px;
+        background-position: center; 
+        border: thick ridge deeppink;
+        border-radius: 20px; 
+        animation: animate 0.3s linear infinite;
+        box-shadow: 0 0 10px deeppink, 0 0 30px deeppink, 
+        inset 0 0 10px deeppink, inset 0 0 30px deeppink;
+        /*display: block;*/
+        /*margin: 0 auto;*/
+        margin-top: 20px;
+        margin-left: 750px;
+        
+            
+        }
+        
+        
+        /*Fin CSS Boton*/
+        
+        /*Borde insert coins*/
+        
+        #coins {
+            
+        background-size: 1000px 400px;   
+        width: 1000px;
+        height: 400px;
+        background-position: center; 
+        border: thick ridge deeppink;
+        border-radius: 20px; 
+        animation: animate 0.3s linear infinite;
+        box-shadow: 0 0 10px deeppink, 0 0 30px deeppink, 
+        inset 0 0 10px deeppink, inset 0 0 30px deeppink;
+        /*display: block;*/
+        /*margin: 0 auto;*/
+        margin-top: 700px;
+        margin-left: 480px;    
+            
+            
+        }
+        
+        /*Animación que maneja la opacidad de los elementos a los que se les incluye*/
+        
+        
+        @keyframes animate 
+        {
+            0%{
+                opacity: 1.2;
+                
+            }
+            
+            30%{
+                
+                opacity: 1;
+            }
+            
+            40%{
+                
+                opacity: .5;
+            }
+            
+            50%{
+                
+                opacity: 1;
+            }
+            
+            100%{
+                
+                opacity: 1.2;
+            }
+        }
+        
+        
+        
+        
+        
+        
+    </style>
+    
+    <!-- FIN CSS -->
+    
+    <!-- JavaScript-->
+    
+    <script>
+          
+    // Creamos la función reset que llama de nuevo a la página index.html para volver a recargar el juego desde el principio    
+        
+    
+    function reset(){
+        
+        window.open("index.html","_self");
+        
+    }
+    
+    </script>
+    
+    <!-- FIN JavaScript-->
+    
+    
+</head>
+<body>
+  
+  <!-- Definimos un sonido de fondo para esta página y creamos el botón que será el gif por completo -->
+  <embed src="sonidos/gameover.mp3" autostart="true" loop="true" volume="0.00001" width="0" height="0"/>
+  <div id="coins">
+  </div>
+   <button id="boton" onclick="reset()"></button>
+   
+    
+</body>
+</html>

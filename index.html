@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el Número</title>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet"/>
+    <link rel="icon" href="gifs/play.gif" type="image/gif" >
+    <style>
+        
+        
+        /*CSS que afecta al cuerpo de la página*/
+    
+        body {
+            
+        background-image: url(gifs/fondo.gif);
+        font-family: 'Anton', sans-serif; 
+        font-size: 20px;
+        margin: 20px;
+            
+       
+            
+        }
+        
+        
+         /*CSS Boton Start*/ 
+       
+        #boton {
+        background-image: url(gifs/start.gif);
+        background-color: black;
+        background-size: 640px 240px;   
+        width: 640px;
+        height: 240px;
+        background-position: center; 
+        border: thick ridge lawngreen;
+        border-radius: 5px; 
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+        display: block;
+        margin: 0 auto;
+            
+        }
+        
+        /*CSS de botón reset*/
+        
+        #reset {
+        background-image: url(gifs/reset.gif);
+        background-color: black;
+        background-size: 519px 833px;   
+        width: 519px;
+        height: 833px;
+        background-position: center; 
+        border: thick ridge lawngreen;
+        border-radius: 5px; 
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+        display: block;
+        margin: 0 auto;
+            
+        }
+        
+        
+        
+        /*Neon CSS*/
+        
+        .neon {
+            
+        
+        font-family: 'Monoton', cursive;
+            
+        text-align: center;
+     
+        letter-spacing: 0.15em;    
+       
+        
+        top:50%;
+        left: 50%;
+       
+       
+        padding: 20px 50px;
+        
+        /*animación*/
+        
+        animation: animate .9s linear infinite;
+            
+        }
+        
+        /*Agregamos los distintos colores a cada palabra*/
+        
+        .blue {
+            
+            color: blue;
+        }
+        
+        .green {
+            
+            color: lawngreen;
+        }
+        
+        .pink {
+            
+            color: deeppink;
+            
+        }
+        
+        
+        /* CSS de la cabecera */
+        
+        #Cabecera {
+        background-image: url(gifs/space.gif);    
+        width: 1000px;
+        font-size: 30px;
+        
+        background-size: 1050px 1050px;
+        border: thick ridge lawngreen;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 1em;
+        color: white;
+        text-align: center;
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+        
+         /*   
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;    
+        */
+        }
+        
+        /*Animación que maneja la opacidad de los elementos a los que se les incluye*/
+        
+        
+        @keyframes animate 
+        {
+            0%{
+                opacity: 1.2;
+                
+            }
+            
+            30%{
+                
+                opacity: 1;
+            }
+            
+            40%{
+                
+                opacity: .5;
+            }
+            
+            50%{
+                
+                opacity: 1;
+            }
+            
+            100%{
+                
+                opacity: 1.2;
+            }
+        }
+        
+        /*Agregamos la animación de la opacidad al título*/
+        
+        h1 span {
+            
+            animation: animate .5s linear infinite;
+        }
+        
+        /*Indicamos el retardo para cada letra del título(h1) con la intención de que sufra la animación*/
+        
+         h1 span:nth-child(1){
+            
+            animation-delay: .40s;
+        }
+        h1 span:nth-child(2){
+            
+            animation-delay: .3s;
+        }
+        h1 span:nth-child(3){
+            
+            animation-delay: .50s;
+        }
+        h1 span:nth-child(4){
+            
+            animation-delay: .3s;
+        }
+        h1 span:nth-child(6){
+            
+            animation-delay: .45s;
+        }
+        h1 span:nth-child(7){
+            
+            animation-delay: .5s;
+        }
+        
+        
+        
+        
+        /* CSS de la lista desplegable */
+    
+        #intentos {
+            
+            /*
+           border: thick ridge lawngreen;
+           border-radius: 5px;
+           margin: 20px;
+           width: 300px;
+        */
+            
+           border: thick ridge deeppink;
+           border-radius: 5px;
+           margin: 20px;
+           width: 300px;
+           overflow: hidden;
+           background-color: black;
+           color: white;
+           padding: 5px 8px;
+           box-shadow: 0 0 10px deeppink, 0 0 30px deeppink, 
+           inset 0 0 10px deeppink, inset 0 0 30px deeppink;
+            
+        }
+        
+        /*Cuando seleccionemos la lista desplegable clicando en ella le asignaremos el color aqua*/
+        
+        #intentos:focus {
+            
+        color: aqua;
+        }
+        
+        /*Cuando coloquemos el cursor sobre la lista desplegable aparecerá como fondo uno de los gifs*/
+        
+        #intentos:hover {
+            
+        background-image:url(gifs/rayos.gif);    
+            
+        }
+        
+        /*CSS referente a la lista desplegable*/
+        
+        #lista {
+        
+        
+        width: 800px;
+        height: 800px;
+        background-repeat: no-repeat;
+        background-color: black;
+        
+        background-size: 800px 800px;
+        border: thick ridge lawngreen;
+        border-radius: 5px;
+        
+        background-image: url(gifs/arcade.gif);
+        display: block;
+        margin: auto;
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+            
+        }
+        
+        /*CSS de la imagen que aparece en función de que dificultad eliga el usuario*/
+        
+        #imagen {
+            
+        /*Centramos la imagen en el div*/
+            
+        display: block;
+        margin: 0 auto;
+            
+            
+        }
+        
+        /*CSS del apartado de entrada para el usuario, donde introduce el dato que será procesado por el código jQuery*/
+        
+        #Entrada {
+        
+        width: 500px;
+        height: 460px;    
+        background-image: url(gifs/noche2.gif);     
+        border: thick ridge lawngreen;
+        border-radius: 5px;    
+            
+        color: white;
+        background-color: black;    
+        padding: 20px; 
+        display: block;
+        float: left;
+        margin: auto;   
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+            
+        }
+        
+        /*CSS del div donde se visualizarán los resultados*/
+        
+        #Final{
+        
+        background-image: url(gifs/noche.gif);     
+        width: 500px;
+        height: 500px;    
+        border: thick ridge lawngreen;
+        border-radius: 5px;    
+        display: block;
+        float: right;
+        margin: 0 auto;
+        animation: animate 2s linear infinite;
+        box-shadow: 0 0 10px green, 0 0 30px green, 
+        inset 0 0 10px green, inset 0 0 30px green;
+            
+        }
+        
+        /*Establecemos las propiedades del h2 donde se imprimen los resultados*/
+        
+        #resultado{
+        
+        
+          
+        width: 500px;
+        height: 500px;    
+        text-align: center; 
+        color: white;
+        display: block;
+        margin: 0 auto;     
+            
+        }
+        
+        /*CSS dedicado a la entrada o input del usuario*/
+        
+        #numero {
+            
+            background-color: black;
+            text-align: center;
+            width: 400px;
+            height:200px;
+            font-size:30pt;
+            color: white;
+            border: thick ridge lawngreen;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 10px green, 0 0 30px green, 
+            inset 0 0 10px green, inset 0 0 30px green;
+        }
+        
+        
+     
+        
+    
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="adivinar.js"></script>
+
+    
+</head>
+<body>
+  
+  <!-- Sonido de fondo -->
+  
+  <embed src="sonidos/8bit.mp3" autostart="true" loop="true" volume="0.00001" width="0" height="0"/>
+  
+  
+  <!-- Cabecera -->
+
+<div id="Cabecera">
+    
+<h1 class="neon blue">
+    <span>A</span>
+    <span>D</span>  
+    <span>I</span>
+    <span>V</span>
+    <span>I</span>
+    <span>N</span>
+    <span>A</span>    
+</h1>
+      
+<h1 class="neon green">
+    <span>E</span>
+    <span>L</span>
+</h1>
+      
+<h1 class="neon pink">
+    <span>N</span>
+    <span>Ú</span>
+    <span>M</span>
+    <span>E</span>
+    <span>R</span>
+    <span>O</span>
+</h1>                            
+       
+</div>    
+  
+   
+   <!-- FIN Cabecera -->
+  
+   
+   <!-- Lista desplegable -->    
+      
+<div id="lista">
+    <select id="intentos">
+      <option value="1">"Leyenda: 1 intento"</option>
+      <option value="10">"Difícil: 10 intentos"</option>
+      <option value="15">"Medio: 15 intentos"</option>
+      <option value="25">"Fácil: 25 intentos"</option>
+      <option value="30">"¿Eres un ser humano?: 30 intentos"</option>
+    </select>
+    
+    
+    <!-- Imagen dinámica, cambiará en función del option seleccionado, poderoso.gif y option 1 por defecto -->
+    
+    <img id="imagen" src="gifs/poderoso.gif" alt="numeros">
+</div>
+   
+   <!-- FIN Lista desplegable -->
+   
+   
+   <!-- Entrada del usuario -->
+   
+   <div id="Entrada">
+       
+       <h2 id="entrada2">Introduzca un numero entre 1 y 100
+       <br>
+       <br>
+       <input id="numero" type="text" size="10"/></h2>
+   </div>
+   
+   <!-- FIN Entrada del usuario -->
+   
+   <!-- Apartado final donde se mostrarán los resultados -->
+   
+   <div id="Final">
+   <br>
+   <h2 id="resultado">-RESULTADO-</h2>
+   </div>
+   
+   <!-- Fin Final -->
+   
+   
+   <!-- Div para los 2 botones, start y reset -->
+   
+   <div id="Comprobar">
+       <button id="boton"></button>
+       <button id="reset"></button>  
+   </div>
+   
+   <!-- Fin div botones -->
+   
+
+   
+   
+    
+</body>
+</html>
